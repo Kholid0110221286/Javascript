@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tugas Javascript</title>
+    <script>
+      function lingkaran() {
+        document.getElementById('luas').innerHTML = 3.14 * Math.pow(r.value, 2);
+        document.getElementById('keliling').innerHTML = 2 * 3.14 * r.value;
+      }
+      function kurs() {
+        const dollar = 14650;
+        document.getElementById('hasil').innerHTML = rupiah.value / dollar;
+      }
+
+      function parkir() {
+        let jam_masuk = document.getElementById('masuk').value;
+        let jam_keluar = document.getElementById('keluar').value;
+        let selisih = jam_keluar - jam_masuk;
+        let bp = 0;
+        const awal = 3000;
+        const perjam = 1000;
+        if (selisih <= 2) {
+          bp = awal;
+        } else {
+          let tambahjam = selisih - 2;
+          bp = awal + perjam * tambahjam;
+        }
+        let areaBiaya = document.getElementById('bp');
+        areaBiaya.innerHTML = bp;
+      }
+      function duabilangan() {
+        document.getElementById('bil1').value;
+        document.getElementById('bil2').value;
+        let hasilbilangan = bil1 + bil2;
+        document.getElementById('hasilbilangan').innerHTML = hasilbilangan;
+      }
+      function duabilangan() {
+        let dbil1 = parseInt(document.getElementById('bil1').value);
+        let dbil2 = parseInt(document.getElementById('bil2').value);
+        let hasil = dbil1 + dbil2;
+        document.getElementById('hasilbilangan').value = hasil;
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Soal 1 -->
+    <fieldset>
+      <legend>Luas & Keliling Lingkaran</legend>
+      <input type="number" id="r" placeholder="nilai jari-jari" />
+      <button onclick="lingkaran()">=</button>
+      <br />
+      Luas:
+      <span id="luas"> </span>
+      <br />
+      Keliling:
+      <span id="keliling"></span>
+    </fieldset>
+    <!-- Soal 2 -->
+    <fieldset>
+      <legend>Kurs Rupiah</legend>
+      <input type="number" id="rupiah" placeholder="Rupiah" />
+      <button onclick="kurs()">=</button>
+      $ <span id="hasil"></span>
+    </fieldset>
+    <!-- Soal 3 -->
+    <fieldset>
+      <legend>Biaya Parkir</legend>
+      <span>Masuk Parkir : </span>
+      <input type="number" id="masuk" />
+      <br />
+      <span>Keluar Parkir : </span>
+      <input type="number" id="keluar" />
+      <br />
+      <button onclick="parkir()">Biaya Parkir</button> =
+      <span id="bp"></span>
+    </fieldset>
+    <!-- Soal 4 -->
+    <fieldset>
+      <legend>Jumlah Dua Bilangan</legend>
+      <input type="number" id="bil1" />
+      <br />
+      +
+      <br />
+      <input type="number" id="bil2" />
+      <br />
+      <button onclick="duabilangan()">=</button>
+      <br />
+      <input type="text" id="hasilbilangan" />
+    </fieldset>
+  </body>
+</html>
